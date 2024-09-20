@@ -8,7 +8,7 @@ return {
     local capabilities = require("nvchad.configs.lspconfig").capabilities
 
     local lspconfig = require "lspconfig"
-    local servers = { "eslint", "tailwindcss", "tsserver" }
+    local servers = { "eslint", "tailwindcss", "ts_ls" }
 
     local function organize_imports()
       local params = {
@@ -21,12 +21,18 @@ return {
 
     for _, lsp in ipairs(servers) do
       local commands = {}
+      local init_options = {}
 
-      if lsp == "tsserver" then
+      if lsp == "ts_ls" then
         commands = {
           OrganizeImports = {
             organize_imports,
             description = "Organize Imports",
+          },
+        }
+        init_options = {
+          preferences = {
+            importModuleSpecifierPreference = "non-relative",
           },
         }
       end
@@ -36,6 +42,7 @@ return {
         on_init = on_init,
         capabilities = capabilities,
         commands = commands,
+        init_options = init_options,
       }
     end
   end,
