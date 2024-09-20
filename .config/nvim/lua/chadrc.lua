@@ -12,6 +12,7 @@ M.ui = {
     theme = "minimal",
     separator_style = "round",
   },
+
   cmp = {
     style = "atom_colored",
   },
