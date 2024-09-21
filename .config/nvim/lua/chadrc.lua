@@ -16,6 +16,7 @@ M.ui = {
   cmp = {
     style = "atom_colored",
   },
+
   -- hl_override = {
   --   Visual = {
   --     bg = "#42464e",
