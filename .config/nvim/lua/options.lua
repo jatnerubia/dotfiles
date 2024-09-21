@@ -13,3 +13,5 @@ o.foldlevel = 99
 o.foldmethod = "expr"
 o.foldexpr = "nvim_treesitter#foldexpr()"
 o.foldenable = false
+
+o.wrap = false
