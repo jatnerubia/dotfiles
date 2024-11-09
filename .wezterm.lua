@@ -6,22 +6,24 @@ local config = wezterm.config_builder()
 
 -- This is where you actually apply your config choices
 config.font = wezterm.font("FiraCode Nerd Font")
-config.font_size = 14
+config.font_size = 12
+
+config.color_scheme = "Catppuccin Mocha"
 
 -- config.colors = {
 -- 	background = "#181818",
 -- }
 
-config.background = {
-	{
-		source = {
-			File = "/Users/j/Pictures/bg1.jpg",
-		},
-		hsb = {
-			brightness = 0.1,
-		},
-	},
-}
+-- config.background = {
+-- 	{
+-- 		source = {
+-- 			File = "/Users/j/Pictures/bg1.jpg",
+-- 		},
+-- 		hsb = {
+-- 			brightness = 0.1,
+-- 		},
+-- 	},
+-- }
 
 config.cursor_thickness = 2
 config.underline_thickness = 5
