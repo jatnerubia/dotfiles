@@ -107,7 +107,9 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias nvim="nvim --listen /tmp/nvim-server-$(tmux display-message -p '#I.#P').pipe"
+if command -v tmux &>/dev/null && tmux has-session 2>/dev/null; then
+  alias nvim="nvim --listen /tmp/nvim-server-$(tmux display-message -p '#I.#P').pipe"
+fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
